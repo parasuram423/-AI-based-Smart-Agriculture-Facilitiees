@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+<style>
+  body {
+    background-color: #f7f6f6;
+    font-family: 'Arial', sans-serif;
+    color: #141414;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 1000px;
+  }
+
+  h1 {
+    color: #7CFC00;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px #000;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+  }
+
+  .features, .why-choose {
+    background-color: #f0ecec;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .features h2, .why-choose h2 {
+    color: #09fa65;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  img {
+    height: 350px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+    object-fit: cover;
+  }
+
+  ul {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  .messages {
+    margin-top: 10px;
+    text-align: center;
+    color: #ff6347;
+  }
+</style>
+
+<div class="home-container">
+
+  <h1>Welcome to Smart Agri-Maintenance System</h1>
+
+
+  <p>
+    In the era of modern agriculture, machinery efficiency is crucial for productivity. 
+    Our <strong>Predictive Maintenance System</strong> leverages advanced 
+    <strong>machine learning algorithms</strong> to monitor the health of agricultural equipment in real-time, 
+    ensuring timely maintenance and minimizing unexpected failures.
+  </p>
+
+  <div class="features">
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>User-Friendly Interface:</strong> Easily upload equipment data and receive actionable insights.</li>
+      <li><strong>Advanced Machine Learning Models:</strong> Includes LSTM, BiLSTM, ANN, and LGBM for highly accurate predictions.</li>
+      <li><strong>Data Visualization:</strong> Interactive charts and performance metrics help understand system predictions clearly.</li>
+      <li><strong>Comprehensive Dashboard:</strong> Track equipment status, maintenance schedules, and historical trends.</li>
+      <li><strong>Secure and Reliable:</strong> Built on Django Framework, ensuring secure user authentication and data management.</li>
+    </ul>
+  </div>
+
+  <div class="why-choose">
+    <h2>Why Choose Our System?</h2>
+    <ul>
+      <li><strong>Reduce Downtime:</strong> Predict failures and schedule maintenance proactively.</li>
+      <li><strong>Optimize Costs:</strong> Minimize unnecessary repairs and extend machinery life.</li>
+      <li><strong>Data-Driven Decisions:</strong> Make informed decisions using real-time analytics.</li>
+      <li><strong>Easy Access Anywhere:</strong> Cloud-based data management for remote monitoring.</li>
+    </ul>
+  </div>
+
+  {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+        <p>{{ message }} - {{ request.user }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</div>
+{% endblock %}
